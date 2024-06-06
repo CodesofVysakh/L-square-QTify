@@ -24,6 +24,11 @@ code {
     monospace;
 }
 
+input{
+  outline: none;
+  border: none;
+}
+
 .poppins-thin {
   font-family: "Poppins", sans-serif;
   font-weight: 100;
