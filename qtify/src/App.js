@@ -6,11 +6,11 @@ import SearchBar from "./components/SearchBar/SearchBar";
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
+            <nav className="navbarContainer">
                 <img src={logo} alt="Logo" />
                 <SearchBar />
                 <Button>Give Feedback</Button>
-            </header>
+            </nav>
         </div>
     );
 }
