@@ -5,7 +5,7 @@ import styles from "./Section.module.css";
 
 function Section() {
 	const [ data, setData ] = useState();
-	const handleTopAlbums = () => {
+	const getNewAlbums = () => {
 		axios
 			.get('https://qtify-backend-labs.crio.do/albums/top')
 			.then((response) => {
@@ -17,7 +17,7 @@ function Section() {
 			})
 	}
 	useEffect(() => {
-		handleTopAlbums();
+		getNewAlbums();
 	}, [])
 	
     return (
