@@ -1,0 +1,10 @@
+.Card{
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.Follow{
+    background-color: #fff;
+    color: #000;
+    padding: 8px;
+}

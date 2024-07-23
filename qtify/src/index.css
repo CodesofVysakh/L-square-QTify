@@ -29,6 +29,11 @@ input{
   border: none;
 }
 
+img{
+  width: 100%;
+  display: block;
+}
+
 .poppins-thin {
   font-family: "Poppins", sans-serif;
   font-weight: 100;
