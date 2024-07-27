@@ -34,7 +34,8 @@ function App() {
 	                <img src={HeadPhone} alt="Hero Image" />
 				</div>
 			</div>
-			<Section />
+			<Section title={"Top"} slug="top"/>
+			<Section title={"New"} slug="new"/>
         </div>
     );
 }
