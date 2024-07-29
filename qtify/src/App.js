@@ -1,12 +1,29 @@
+import React, { useEffect, useState } from "react";
+import { fetchFilters, fetchNewAlbums, fetchSongs, fetchTopAlbums } from "./api/api";
+
 import "./App.css";
 import logo from "./components/assets/images/qtify-logo.svg";
 import HeadPhone from "./components/assets/images/vibrating-headphone.svg";
 import SearchImage from './components/assets/images/Search-icon.svg'
 import Section from "./components/Sections/Section";
 
-// import SearchBar from "./components/SearchBar/SearchBar";
-
 function App() {
+	const [data, setData] = useState({});
+	const generateData = (key, source) => {
+		source().then((data) => {
+		setData((preData) => {
+			return { ...preData, [key]: data };
+		});
+		});
+	};
+	useEffect(() => {
+		generateData("topAlbums", fetchTopAlbums);
+		generateData("newAlbums", fetchNewAlbums);
+		generateData("songs", fetchSongs);
+	}, []);
+
+	const { topAlbums = [], newAlbums = [], songs = [] } = data;
+
     return (
         <div className="App">
             <header className="navbarContainer App-header">
@@ -34,8 +51,14 @@ function App() {
 	                <img src={HeadPhone} alt="Hero Image" />
 				</div>
 			</div>
-			<Section title={"Top"} slug="top"/>
-			<Section title={"New"} slug="new"/>
+			<Section title="Top Albums" data={topAlbums} type="album" />
+			<Section title="New Albums" data={newAlbums} type="album" />
+			<Section
+				title="Songs"
+				data={songs}
+				type="song"
+				filterSource={fetchFilters}
+			/>
         </div>
     );
 }

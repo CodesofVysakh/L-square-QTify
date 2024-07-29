@@ -1,16 +1,32 @@
 .Container{
-    padding: 14px 32px;
+  padding: 14px 32px;
 }
 
-.HeadContainer{
+.Header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+    align-items: baseline;
 }
-.ContentContainer{
-    display: grid;
-    gap: 20px;
-    grid-template-columns: auto auto auto auto auto auto auto;
-    padding: 10px;
+
+.CardWrapper {
+    margin-top: 18px;
+}
+
+.Wrapper {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.CardContainer{
+    width: 14%;
+}
+
+.FilterWrapper {
+    margin-top: 15px;
+}
+
+.ToggleText {
+    cursor: pointer;
+    color: #34c94b;
 }
